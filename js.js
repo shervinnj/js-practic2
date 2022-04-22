@@ -26,7 +26,7 @@ console.log('4');
 //jasonolace holder web sayte barayeh fake API
 
 
-const url='https://jsonplaceholder.typicode.com/todos/1';
+const url='https://jsonplaceholder.typicode.com/todos/';
 
 //URL balah  fake API 
 
@@ -72,44 +72,61 @@ request.send();
 // va agharam nabud clg namayesh bedeeh
 
 //+++++++++ hala ma miyam in kareh ba estefadeh az JSON mikonim
-request=new XMLHttpRequest();
+// request=new XMLHttpRequest();
 
-request.open('GET','data.json');
+// request.open('GET','data.json');
 
-request.send();
+// request.send();
 
-request.onload=function(){
-    if(request.status===200){
-        console.log(request.responseText);
+// request.onload=function(){
+//     if(request.status===200){
+//         console.log(request.responseText);
         
-    }else{
-        console.log('NOT Found....');
-    }
-}
+//     }else{
+//         console.log('NOT Found....');
+//     }
+// }
 
 //ba estefadeh az in dastoor ma yek function neveshtim
 // ke file jason daaryaft konim va jasonemoon to consollog be soorateh string objet namayesh mideh
 //hala agar bekhayim be soorateh arr namayesh bedeh az dastoreh JSON.parse estefadeh mikonim ke dar khateh payin anjamesh midim
 
-request.onload=function(){
-    if(request.status===200){
-        let data=JSON.parse(request.responseText)
+// request.onload=function(){
+//     if(request.status===200){
+//         let data=JSON.parse(request.responseText)
         
-        console.log(data[0].firstName);
+//         console.log(data);
         
-    }else{
-        console.log('NOT Found....');
-    }
+//     }else{
+//         console.log('NOT Found....');
+//     }
 
-}
+// }
 
 //ma yek motaghir ijad kardim va JSON.parse rikhtim toosh
 // va hala goftim outcome be soorateh array bara ma namayesh bedeh
 //va hata mitoonim beghim kodoom filo ehtiyaj darim
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+//barayeh darkhasteh etelaat az server
+ 
+let ersal=new XMLHttpRequest;
+ersal.open('Get',url);
+ersal.send();
+ersal.onload=function(){
+    if(ersal.status===200){
+        let ers=JSON.parse(ersal.responseText)
+        for(let d of ers){
+            console.log(d);
+        }
+    }else{
+        console.log('not fond');
+    }
+}
 
 
-
-
+// ma ba in dastooreh sadeh mitoonim be url  server dastresi dashte bashim 
 
 
 
