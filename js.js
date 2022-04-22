@@ -55,9 +55,21 @@ request.send();
 
 //hala ke etelaato daryaft va send kardam hala ba property  onload miyam be etelatam dastresi peyda mikonam
 
+request.onload=function(){
+    if(request.status===200){
+        console.log(request.);
+    }else{
+        console.log('page NOT found');
+    }
 
 
-
+}
+// ba estefadeh az clg ma mitoonim dastresi dashteh bashim be etelatemoon
+// ke mohemtarineshoon hast responseText ke asmeh maneh
+//va bad status ke agar bezaneh 200 yani hame chi khubeh 
+// va bad statusText ke aghar bezaneh ok ke okayeh
+// to function bala zamani ke neveshtim aghar status bara bar ba 200 bood ke yani ok peyghame clg baramoon namayesh bedeh
+// va agharam nabud clg namayesh bedeeh
 
 
 
