@@ -35,7 +35,7 @@ const url='https://jsonplaceholder.typicode.com/todos/1';
 
 //payin sakhte object request 
 
-const request = new XMLHttpRequest()
+let request = new XMLHttpRequest()
 
 // dastooreh balah ba estefadeh az gozineh new ye constructor ijad mikonim
 
@@ -55,21 +55,57 @@ request.send();
 
 //hala ke etelaato daryaft va send kardam hala ba property  onload miyam be etelatam dastresi peyda mikonam
 
-request.onload=function(){
-    if(request.status===200){
-        console.log(request.);
-    }else{
-        console.log('page NOT found');
-    }
+// request.onload=function(){
+//     if(request.status===200){
+//         console.log(request);
+//     }else{
+//         console.log('page NOT found');
+//     }
 
 
-}
+// }
 // ba estefadeh az clg ma mitoonim dastresi dashteh bashim be etelatemoon
 // ke mohemtarineshoon hast responseText ke asmeh maneh
 //va bad status ke agar bezaneh 200 yani hame chi khubeh 
 // va bad statusText ke aghar bezaneh ok ke okayeh
 // to function bala zamani ke neveshtim aghar status bara bar ba 200 bood ke yani ok peyghame clg baramoon namayesh bedeh
 // va agharam nabud clg namayesh bedeeh
+
+//+++++++++ hala ma miyam in kareh ba estefadeh az JSON mikonim
+request=new XMLHttpRequest();
+
+request.open('GET','data.json');
+
+request.send();
+
+request.onload=function(){
+    if(request.status===200){
+        console.log(request.responseText);
+        
+    }else{
+        console.log('NOT Found....');
+    }
+}
+
+//ba estefadeh az in dastoor ma yek function neveshtim
+// ke file jason daaryaft konim va jasonemoon to consollog be soorateh string objet namayesh mideh
+//hala agar bekhayim be soorateh arr namayesh bedeh az dastoreh JSON.parse estefadeh mikonim ke dar khateh payin anjamesh midim
+
+request.onload=function(){
+    if(request.status===200){
+        let data=JSON.parse(request.responseText)
+        
+        console.log(data[0].firstName);
+        
+    }else{
+        console.log('NOT Found....');
+    }
+
+}
+
+//ma yek motaghir ijad kardim va JSON.parse rikhtim toosh
+// va hala goftim outcome be soorateh array bara ma namayesh bedeh
+//va hata mitoonim beghim kodoom filo ehtiyaj darim
 
 
 
