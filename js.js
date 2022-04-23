@@ -1,12 +1,12 @@
-console.log('1');
-console.log('2');
+// console.log('1');
+// console.log('2');
 
-setTimeout(function(){
-    console.log('after 4 saniyeh');
-},4000)
+// setTimeout(function(){
+//     console.log('after 4 saniyeh');
+// },4000)
 
-console.log('3');
-console.log('4');
+// console.log('3');
+// console.log('4');
 // be system mighim ke key in dastoor baramoon anjam beshe
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -129,22 +129,22 @@ request.send();
 // ma ba in dastooreh sadeh mitoonim be url  server dastresi dashte bashim 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const url='https://jsonplaceholder.typicode.com/todos/1';
-let get=function(url,callback){
+// const url='https://jsonplaceholder.typicode.com/todos/1';
+// let get=function(url,callback){
 
-    let requst=new XMLHttpRequest();
-requst.open('GET',url);
-requst.send();
+//     let requst=new XMLHttpRequest();
+// requst.open('GET',url);
+// requst.send();
 
-requst.onload=function(){
-    if(requst.status===200){
-        let data=JSON.parse(requst.responseText)
-        callback(undefined,data);
-    }else{
-        callback('not found',undefined);
-    }
-}
-}
+// requst.onload=function(){
+//     if(requst.status===200){
+//         let data=JSON.parse(requst.responseText)
+//         callback(undefined,data);
+//     }else{
+//         callback('not found',undefined);
+//     }
+// }
+// }
 
 // get(url,function(error,data){
 //     if(error){
@@ -159,31 +159,142 @@ requst.onload=function(){
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const url1='https://jsonplaceholder.typicode.com/todos/1';
-const url2='https://jsonplaceholder.typicode.com/todos/2';
-const url3='https://jsonplaceholder.typicode.com/todos/3';
+// const url1='https://jsonplaceholder.typicode.com/todos/1';
+// const url2='https://jsonplaceholder.typicode.com/todos/2';
+// const url3='https://jsonplaceholder.typicode.com/todos/3';
 
-get(url1,function(error,data){
-    if(error){
-        console.log('no data');
-    }else{
-        console.log(data);
-        get(url2,function(error,data){
-    if(error){
-        console.log('no data');
-    }else{
-        console.log(data);
-        get(url3,function(error,data){
-    if(error){
-        console.log('no data');
-    }else{
-        console.log(data);
-    }
-});
-    }
-});
-    }
-});
+// get(url1,function(error,data){
+//     if(error){
+//         console.log('no data');
+//     }else{
+//         console.log(data);
+//         get(url2,function(error,data){
+//     if(error){
+//         console.log('no data');
+//     }else{
+//         console.log(data);
+//         get(url3,function(error,data){
+//     if(error){
+//         console.log('no data');
+//     }else{
+//         console.log(data);
+//     }
+// });
+//     }
+// });
+//     }
+// });
 
 //++++++++++  call back hell
 // hame zireh elsa joda boodan alan hamashoono zireh ham garar dadim ta ontime ejra beshan
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// let site='https://jsonplaceholder.typicode.com/todos/1';
+
+
+
+// function godFather(site,callback){
+
+//     let gondar=new XMLHttpRequest();
+//     gondar.open('GET',site);
+//     gondar.send();
+//     gondar.onloadend=function(){
+//     if(gondar.status===200){
+//         let tabdil;
+//         tabdil=JSON.parse(gondar.responseText)
+//       callback(undefined,tabdil);
+        
+        
+//     }else{
+//         callback('not found..',undefined);
+//     }
+//     }
+
+// }
+
+// godFather(site,function(error,tabdil){
+//  if(error){
+//      console.log(error);
+//  }else{
+//      console.log(tabdil);
+//  }
+// });
+
+// agar bekhayim be chanta server requst bezanim 
+// va mikhayim be tartib bashe miyayim dakhele else zireh 
+//consoleLog minevesim
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+let site='https://jsonplaceholder.typicode.com/todos/1';
+
+
+
+// function godFather(site){
+   
+//     return new Promise(function(resolve,reject){
+
+//     let gondar=new XMLHttpRequest();
+//     gondar.open('GET',site);
+//     gondar.send();
+//     gondar.onloadend=function(){
+//     if(gondar.status===200){
+//         let tabdil;
+//         tabdil=JSON.parse(gondar.responseText)
+//       resolve(tabdil);
+         
+//     }else{
+//         reject('not found...');
+//     }
+//  }
+
+  
+//  });
+
+//  }
+  
+//  godFather(site).then(function(tabdil){
+//      console.log(tabdil);
+//  }).catch(function(error){
+//      console.log(error);
+//  })
+
+ // promisis function++++++++++++++++++++
+  site='https://jsonplaceholder.typicode.com/todos/1';
+
+
+fetch(site).then(function(data){
+    if(data.status===200){
+        return data.json()
+    }else{
+        throw new Error('not found')
+    }
+    
+}).then(function(result){
+    console.log(result);
+}).catch(function(error){
+    console.log(error.message);
+})
+
+
+// kheli asooneh site ke url mirizim to fatch 
+// bad mighim return kon to data bad ye function result minevisim 
+// bad mighim printesh kon so zatan then hame ro zangirehvar mikoneh
+
+
+// hala agar mikhayim fitch error bedeh bayad az dastooreh if estefadeh konim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
