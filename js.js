@@ -146,13 +146,44 @@ requst.onload=function(){
 }
 }
 
-get(url,function(error,data){
+// get(url,function(error,data){
+//     if(error){
+//         console.log('no data');
+//     }else{
+//         console.log(data);
+//     }
+// });
+
+// call back function
+//dar khat 149 barayeh khateh 133 man perameter dovom ye function neveshtam
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const url1='https://jsonplaceholder.typicode.com/todos/1';
+const url2='https://jsonplaceholder.typicode.com/todos/2';
+const url3='https://jsonplaceholder.typicode.com/todos/3';
+
+get(url1,function(error,data){
+    if(error){
+        console.log('no data');
+    }else{
+        console.log(data);
+        get(url2,function(error,data){
+    if(error){
+        console.log('no data');
+    }else{
+        console.log(data);
+        get(url3,function(error,data){
     if(error){
         console.log('no data');
     }else{
         console.log(data);
     }
 });
+    }
+});
+    }
+});
 
-// call back function
-//dar khat 149 barayeh khateh 133 man perameter dovom ye function neveshtam
+//++++++++++  call back hell
+// hame zireh elsa joda boodan alan hamashoono zireh ham garar dadim ta ontime ejra beshan
