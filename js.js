@@ -226,7 +226,7 @@ request.send();
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-let site='https://jsonplaceholder.typicode.com/todos/1';
+// let site='https://jsonplaceholder.typicode.com/todos/1';
 
 
 
@@ -260,21 +260,21 @@ let site='https://jsonplaceholder.typicode.com/todos/1';
 //  })
 
  // promisis function++++++++++++++++++++
-  site='https://jsonplaceholder.typicode.com/todos/1';
+//   site='https://jsonplaceholder.typicode.com/todos/1';
 
 
-fetch(site).then(function(data){
-    if(data.status===200){
-        return data.json()
-    }else{
-        throw new Error('not found')
-    }
+// fetch(site).then(function(data){
+//     if(data.status===200){
+//         return data.json()
+//     }else{
+//         throw new Error('not found')
+//     }
     
-}).then(function(result){
-    console.log(result);
-}).catch(function(error){
-    console.log(error.message);
-})
+// }).then(function(result){
+//     console.log(result);
+// }).catch(function(error){
+//     console.log(error.message);
+// })
 
 
 // kheli asooneh site ke url mirizim to fatch 
@@ -284,11 +284,26 @@ fetch(site).then(function(data){
 
 // hala agar mikhayim fitch error bedeh bayad az dastooreh if estefadeh konim
 
+// let link='https://jsonplaceholder.typicode.com/todos/2';
 
 
+// let getTodos=async function(link){
+//     let response = fetch(link);
+//    if(response.status===200){
+//       let data=await response.json();
+//       return data;
+//    }else{
+//         throw new Error('not found....')
+//    }
+// }
 
+// getTodos(link).then(function(data){
+//     console.log(data);
+// }).catch(function(error){
+//     console.log(error.message);
+// })
 
-
+//============ tozih nadarad=======================
 
 
 
