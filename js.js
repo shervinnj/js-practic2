@@ -26,7 +26,7 @@ console.log('4');
 //jasonolace holder web sayte barayeh fake API
 
 
-const url='https://jsonplaceholder.typicode.com/todos/';
+// const url='https://jsonplaceholder.typicode.com/todos/';
 
 //URL balah  fake API 
 
@@ -111,25 +111,48 @@ request.send();
 
 //barayeh darkhasteh etelaat az server
  
-let ersal=new XMLHttpRequest;
-ersal.open('Get',url);
-ersal.send();
-ersal.onload=function(){
-    if(ersal.status===200){
-        let ers=JSON.parse(ersal.responseText)
-        for(let d of ers){
-            console.log(d);
-        }
-    }else{
-        console.log('not fond');
-    }
-}
+// let ersal=new XMLHttpRequest;
+// ersal.open('Get',url);
+// ersal.send();
+// ersal.onload=function(){
+//     if(ersal.status===200){
+//         let ers=JSON.parse(ersal.responseText)
+//         for(let d of ers){
+//             console.log(d);
+//         }
+//     }else{
+//         console.log('not fond');
+//     }
+// }
 
 
 // ma ba in dastooreh sadeh mitoonim be url  server dastresi dashte bashim 
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const url='https://jsonplaceholder.typicode.com/todos/1';
+let get=function(url,callback){
 
+    let requst=new XMLHttpRequest();
+requst.open('GET',url);
+requst.send();
 
+requst.onload=function(){
+    if(requst.status===200){
+        let data=JSON.parse(requst.responseText)
+        callback(undefined,data);
+    }else{
+        callback('not found',undefined);
+    }
+}
+}
 
+get(url,function(error,data){
+    if(error){
+        console.log('no data');
+    }else{
+        console.log(data);
+    }
+});
 
-
+// call back function
+//dar khat 149 barayeh khateh 133 man perameter dovom ye function neveshtam
